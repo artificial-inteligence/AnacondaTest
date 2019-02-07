@@ -66,5 +66,5 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 #gwyd edits
-**/ImageProcessingEnv.iml
-**/misc.xml
+.idea/ImageProcessingEnv.iml
+.idea/misc.xml
