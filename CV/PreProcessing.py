@@ -17,7 +17,7 @@ class PreProcessor:
         return blur
 
     def applygreyscale(self, img):
-        greyscale = cv2.cvtColor(img, cv2.COLOR_2GRAY)
+        greyscale = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         return greyscale
 #
 # # display image

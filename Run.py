@@ -1,15 +1,19 @@
 import cv2
-from PreProcessing import PreProcessor
+from CV import PreProcessor, FaceDetector
 
-import PreProcessing
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread('Images/face-2.jpg')
+img = cv2.imread('Images/manFace.jpeg')
 preProcessor = PreProcessor()
 
 greyScaleImg = preProcessor.applygreyscale(img)
 bFilter = preProcessor.applybilateralfilter(greyScaleImg)
+
+faceDetector = FaceDetector()
+faces = faceDetector.detectfaces(bFilter)
+faceDetector.drawresult(faces, bFilter)
+
 print("run ran")
 
 #cv2.imwrite("bilateralFilter.png", bFilter)

@@ -1,2 +1,2 @@
 from PreProcessing import PreProcessor
-from FaceDetector import FaceDetector
+from Face_Detector import FaceDetector
