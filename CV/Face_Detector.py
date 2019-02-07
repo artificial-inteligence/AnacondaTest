@@ -10,6 +10,7 @@ class FaceDetector:
         pass
 
     def detectfaces(self, greyScaleImg):
+        # detect faces
         faces = self.faceCascade.detectMultiScale(
             greyScaleImg,
             scaleFactor=1.1,
@@ -17,17 +18,11 @@ class FaceDetector:
             minSize=(30, 30),
             flags=cv2.CASCADE_SCALE_IMAGE
         )
-        return faces
-
-    def drawresult(self, facesimage, originalimage):
-        print "Found {0} faces!".format(len(facesimage))
-
-        for (x, y, w, h) in facesimage:
-            cv2.rectangle(originalimage, (x, y), (x + w, y + h), (0, 255, 0), 2)
-
-            region = originalimage[y:(y + h), x:(x + w)]
-            # display image
-            plt.subplot(122), plt.imshow(region), plt.title('Blurred')
-            plt.xticks([]), plt.yticks([])
-            plt.show()
-
+        # extract faces
+        print "Found {0} faces!".format(len(faces))
+        extractedfaces = []
+        for (x, y, w, h) in faces:
+            # cv2.rectangle(greyScaleImg, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            region = greyScaleImg[y:(y + h), x:(x + w)]
+            extractedfaces.append(region)
+        return extractedfaces
