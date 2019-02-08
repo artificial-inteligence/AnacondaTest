@@ -9,10 +9,13 @@ from matplotlib import pyplot as plt
 imgrgb = cv2.imread('Images/manFace.jpeg')
 
 preProcessor = PreProcessor()
-# convert to BGR then gray scale
-greyScaleImg = preProcessor.applygreyscale(imgrgb)
+# convert to BGR
+imgbgr = preProcessor.convert_to_bgr(imgrgb)
+
+# gray scale returns blue/green...
+# greyScaleImg = preProcessor.applygreyscale(imgrgb)
 # Smooth image
-bFilter = preProcessor.applybilateralfilter(greyScaleImg)
+bFilter = preProcessor.applybilateralfilter(imgbgr)
 
 # Detect Faces
 faceDetector = FaceDetector()

@@ -16,12 +16,16 @@ class PreProcessor:
         blur = cv2.bilateralFilter(img, 9, 75, 75)
         return blur
 
-    def applygreyscale(self, imgrgb):
-        imgbgr = cv2.cvtColor(imgrgb, cv2.COLOR_RGB2BGR)
-
-        grey_scale = cv2.cvtColor(imgbgr, cv2.COLOR_BGR2GRAY)
+    def applygreyscale(self, img):
+        grey_scale = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
         return grey_scale
+
+    def convert_to_bgr(self, img):
+        # type: (object) -> object
+        imgbgr = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+        return imgbgr
+
 #
 # # display image
 # plt.subplot(121), plt.imshow(img), plt.title('Original')
