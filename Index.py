@@ -1,6 +1,9 @@
 import cv2
 from matplotlib import pyplot as plt
 
+
+
+
 from skimage import io, color
 img = io.imread('Images/baboon.png')
 dimensions = color.guess_spatial_dimensions(img)

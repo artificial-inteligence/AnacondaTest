@@ -9,10 +9,10 @@ class FaceDetector:
         self.faceCascade = cv2.CascadeClassifier(self.cascPath)
         pass
 
-    def detectfaces(self, greyScaleImg):
+    def detectfaces(self, Img):
         # detect faces
         faces = self.faceCascade.detectMultiScale(
-            greyScaleImg,
+            Img,
             scaleFactor=1.1,
             minNeighbors=5,
             minSize=(30, 30),
@@ -23,6 +23,6 @@ class FaceDetector:
         extractedfaces = []
         for (x, y, w, h) in faces:
             # cv2.rectangle(greyScaleImg, (x, y), (x + w, y + h), (0, 255, 0), 2)
-            region = greyScaleImg[y:(y + h), x:(x + w)]
+            region = Img[y:(y + h), x:(x + w)]
             extractedfaces.append(region)
         return extractedfaces
