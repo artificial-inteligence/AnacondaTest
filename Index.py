@@ -13,7 +13,8 @@ print(dimensions)
 import skimage.io as io
 from skimage.color import rgb2gray
 img = io.imread('Images/baboon.png')
-print (img.shape)
+print ("Shape " + img.shape)
+print("length" + len(img))
 
 # create grey scale
 import skimage.io as io
