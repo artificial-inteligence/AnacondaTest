@@ -19,7 +19,7 @@ class FaceDetector:
             flags=cv2.CASCADE_SCALE_IMAGE
         )
         # extract faces
-        print "Found {0} faces!".format(len(faces))
+        print("Found {0} faces!".format(len(faces)))
         extractedfaces = []
         for (x, y, w, h) in faces:
             # cv2.rectangle(greyScaleImg, (x, y), (x + w, y + h), (0, 255, 0), 2)
