@@ -1,5 +1,5 @@
 import cv2
-from CV import PreProcessor, FaceDetector, HarrisonCornerDetector
+from CV import PreProcessor, FaceDetector
 import matplotlib.image as mpimg
 
 # import numpy as np
@@ -36,11 +36,9 @@ faces = faceDetector.detectfaces(bFilter)
 
 print("run ran")
 
-detector = HarrisonCornerDetector()
 
 # display image
 for face in faces:
-    results = detector.detect_cornders(face)
-    plt.subplot(122), plt.imshow(results), plt.title('Faces')
+    plt.subplot(122), plt.imshow(face), plt.title('Faces')
     plt.xticks([]), plt.yticks([])
     plt.show()
