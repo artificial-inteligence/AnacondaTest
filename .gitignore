@@ -68,3 +68,4 @@ fabric.properties
 #gwyd edits
 .idea/ImageProcessingEnv.iml
 .idea/misc.xml
+**__pycache__/
